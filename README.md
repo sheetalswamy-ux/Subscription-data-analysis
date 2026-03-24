@@ -12,5 +12,11 @@ The company noticed high-paying users were leaving, and they didn't know how muc
 ### 💡 Key Insight
 My analysis showed that **100% of canceled revenue** came from Premium users, indicating a problem with our high-tier service.
 
+### 💻 Main Query
+```sql
+SELECT plan_type, SUM(price) AS lost_revenue
+FROM subscriptions
+WHERE status = 'canceled'
+GROUP BY plan_type;
 
 https://www.db-fiddle.com/f/e8mJXbfiiq7KyRzBaQiR4h/0
